@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Frio 🎂✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="home" class="screen active">
+    <h1>Happy Birthday Frio 🎂✨</h1>
+    <p>Choose what you want to open:</p>
+    <div>
+        <button class="btn main-btn" onclick="showLetter(); launchConfetti();">Letter 💌</button>
+        <button class="btn secondary-btn" onclick="showCake(); launchConfetti();">Blow a Cake 🎂</button>
+    </div>
+</div>
+
+<div id="letter" class="screen">
+    <h1>For Frio 💌</h1>
+
+    <p>
+        Happy 🥺 happy 🤧 birthday 🎉 lmao!<br><br>
+
+        I know 🤖 you probably hate 💢 me or idk, but I still wanted to wish you 🫵 a happy birthday.<br><br>
+
+        Anyways… have fun on your birthday, and may you enjoy your special day to the fullest!<br><br>
+
+        <strong>Best wishes,</strong><br>
+        Lourii
+    </p>
+
+    <h2>Reply / Feedback 💬</h2>
+    <textarea id="replyBox" placeholder="Type your reply here..."></textarea>
+    <br>
+    <button class="btn main-btn" onclick="submitReply(); launchConfetti();">Send Reply ✉️</button>
+
+    <p id="replyMsg"></p>
+</div>
+
+<div id="cake" class="screen">
+    <h1>Make a Wish 🎂</h1>
+
+    <div class="cake">
+        <span id="candle" class="candle">🕯️</span>
+        🎂
+    </div>
+
+    <input id="wishInput" type="text" placeholder="Write your birthday wish here..." />
+    <br>
+    <button class="btn main-btn" onclick="submitWish(); launchConfetti();">Submit Wish 🎉</button>
+
+    <p id="cakeMsg">Click the candle to blow it out 🎉</p>
+    <p id="wishMsg"></p>
+</div>
+
+<button id="backBtn" class="back-btn" onclick="goBack()">← Back</button>
+
+<div class="credit">
+    Made by Lourence Villegas And Friends
+</div>
+
+<script src="script.js"></script>
+</body>
+      </html>

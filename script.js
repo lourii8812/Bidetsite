@@ -39,30 +39,58 @@ window.goBack = function() {
     replyMsg.innerText = "";
 }
 
+/* candle */
 candle.addEventListener("click", () => {
     candle.innerText = "💨";
     cakeMsg.innerText = "🎉 Candle blown! Make a wish! 💖";
     launchConfetti();
 });
 
+/* INIT EMAILJS */
+emailjs.init("2dmm3nTMZnIUaAyMa");
+
+/* SEND WISH */
 window.submitWish = function() {
     let wish = document.getElementById("wishInput").value;
 
     if (wish.trim() === "") {
         wishMsg.innerText = "Please write a wish first ✨";
-    } else {
-        wishMsg.innerText = "Your wish has been received 💌✨";
+        return;
     }
+
+    emailjs.send("service_62zg4op", "template_emqjqzu", {
+        message: wish
+    })
+    .then(() => {
+        wishMsg.innerText = "Your wish has been sent 💌✨";
+    })
+    .catch((error) => {
+        wishMsg.innerText = "Failed to send 😢";
+        console.log(error);
+    });
 }
 
+/* SEND FEEDBACK */
 window.submitReply = function() {
+    let name = document.getElementById("nameInput").value;
     let reply = document.getElementById("replyBox").value;
 
-    if (reply.trim() === "") {
-        replyMsg.innerText = "Write something first 💬";
-    } else {
-        replyMsg.innerText = "Reply sent 💖 Thank you!";
+    if (name.trim() === "" || reply.trim() === "") {
+        replyMsg.innerText = "Please fill in both name and message 💬";
+        return;
     }
+
+    emailjs.send("service_62zg4op", "template_f8qpsf9", {
+        name: name,
+        message: reply
+    })
+    .then(() => {
+        replyMsg.innerText = "Reply sent 💖 Thank you!";
+    })
+    .catch((error) => {
+        replyMsg.innerText = "Failed to send 😢";
+        console.log(error);
+    });
 }
 
 /* CONFETTI */

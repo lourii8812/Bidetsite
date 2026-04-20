@@ -7,7 +7,6 @@
 <title>Happy Birthday 🎂✨</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -27,19 +26,24 @@
 
     <p>
         Happy 🥺 happy 🤧 birthday 🎉 lmao!<br><br>
-
         I know 🤖 you probably hate 💢 me or idk, but I still wanted to wish you 🫵 a happy birthday.<br><br>
-
         Anyways… have fun on your birthday, and may you enjoy your special day to the fullest!<br><br>
-
         <strong>Best wishes,</strong><br>
         Lourii
     </p>
 
     <h2>Reply / Feedback 💬</h2>
+
+    <!-- NAME INPUT (ADDED) -->
+    <input id="nameInput" type="text" placeholder="Your name..." />
+    <br>
+
     <textarea id="replyBox" placeholder="Type your reply here..."></textarea>
     <br>
-    <button class="btn main-btn" onclick="submitReply(); launchConfetti();">Send Reply ✉️</button>
+
+    <button class="btn main-btn" onclick="submitReply(); launchConfetti();">
+        Send Reply ✉️
+    </button>
 
     <p id="replyMsg"></p>
 </div>
@@ -54,7 +58,10 @@
 
     <input id="wishInput" type="text" placeholder="Write your birthday wish here..." />
     <br>
-    <button class="btn main-btn" onclick="submitWish(); launchConfetti();">Submit Wish 🎉</button>
+
+    <button class="btn main-btn" onclick="submitWish(); launchConfetti();">
+        Submit Wish 🎉
+    </button>
 
     <p id="cakeMsg">Click the candle to blow it out 🎉</p>
     <p id="wishMsg"></p>
@@ -65,12 +72,8 @@
 <div class="credit">
     Made by Lourence Villegas :P
 </div>
+
 <script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init("2dmm3nTMZnIUaAyMa");
-})();
-</script>
+
 </body>
-      </html>
+</html>
